@@ -1,0 +1,689 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: AssetBundles FAQ</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/abfaq.html">English</a></li>
+<li><a href="/es/current/Manual/abfaq.html">Español</a></li>
+<li><a href="/ru/current/Manual/abfaq.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture HOWTOs</li>
+<li><a href="AssetBundlesIntro.html">AssetBundles (Pro only)</a></li>
+<li>AssetBundles FAQ</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetBundlesIntro.html"></a></span><div class="tip">AssetBundles (Pro only)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BuildingAssetBundles.html"></a></span><div class="tip">Building AssetBundles</div>
+</div>
+</div></div>
+<h1>AssetBundles FAQ</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2><span lang="fr">Que sont les</span> AssetBundles?</h2>
+
+<p><span id="result_box" class="" lang="fr"><span class="hps">Les AssetBundles</span>
+<span class="hps">sont</span> <span class="hps">une collection</span>
+<span class="hps">d'assets</span><span>,</span> <span class="hps">emballés</span>
+<span class="hps">pour le chargement</span> <span class="hps">lors de 
+l'exécution</span><span>.</span> <span class="hps">Avec</span> <span class="hps">
+les AssetBundles</span><span>,</span> <span class="hps">vous pouvez</span>
+<span class="hps">charger et décharger dynamiquement un</span> <span class="hps">
+nouveau contenu</span> <span class="hps">dans votre application</span><span class="">. 
+Les</span> <span class="hps">AssetBundles</span> <span class="hps">peuvent être 
+utilisés pour</span> des DLC.</span></p>
+
+<h2><span lang="fr">A</span> quoi servent t<span lang="fr">'</span>il<span lang="fr">s</span>?</h2>
+
+<p><span id="result_box0" class="" lang="fr"><span class="hps">Ils peuvent</span>
+<span class="hps">être utilisés pour réduire</span> <span class="hps">la 
+quantité d'espace</span> <span class="hps">sur le disque</span>
+<span class="hps">utilisé par</span> <span class="hps">votre jeu,</span>
+<span class="hps">lors de la première</span> installation<span class="">.</span>
+<span class="hps">Il peut également</span> <span class="hps">être utilisé pour 
+ajouter</span> <span class="hps">du nouveau contenu à</span> <span class="hps">
+un jeu déjà</span> <span class="hps">publié</span><span>.</span></span></p>
+
+<h2><span lang="fr">C</span>omment créer un AssetBundle?</h2>
+
+<p><span id="result_box1" class="" lang="fr"><span class="hps">Pour créer un</span>
+<span class="hps">AssetBundle</span> <span class="hps">vous devez utiliser</span>
+<span class="hps">la class</span> edito<span class="hps">r</span>
+<span class="hps">BuildPipeline</span><span>.</span> <span class="hps">Tous les 
+scripts</span> <span class="hps">utilisant</span> <span class="hps">les classes</span> 
+editor <span class="hps">doivent être placés dans</span> <span class="hps">un
+</span>&nbsp;<span class="hps">dossier nommé Editor</span><span class="">, 
+n'importe où</span> <span class="hps">dans le dossier</span> Assets<span>.</span>
+<span class="hps">Voici un exemple</span> <span class="hps">d'un</span>
+<span class="hps">tel script</span> <span class="hps">en C #</span><span class="">:</span></span></p>
+
+<pre><code>using UnityEngine;
+using UnityEditor;
+
+public class ExportAssetBundles {
+    [MenuItem(&quot;Assets/Build AssetBundle&quot;)]
+    static void ExportResource () {
+        string path = &quot;Assets/myAssetBundle.unity3d&quot;;
+        Object[] selection = Selection.GetFiltered(typeof(Object), SelectionMode.DeepAssets);
+        BuildPipeline.BuildAssetBundle(Selection.activeObject, selection, path, 
+                                       BuildAssetBundleOptions.CollectDependencies 
+                                     | BuildAssetBundleOptions.CompleteAssets);
+    }
+}
+
+</code></pre>
+
+<p><span id="result_box2" class="" lang="fr"><span class="hps">Un script</span>
+<span class="hps">editor</span> <span class="hps atn">n'a pas besoin d'</span><span class="">être 
+appliqué à un</span> <span class="hps">gameobject</span><span>,</span>
+<span class="hps">il est</span> <span class="hps">plutôt utilisé</span>
+<span class="hps">par</span> <span class="hps">l'éditeur</span><span class="">.</span>
+<span class="hps">Cet</span> <span class="hps">exemple précédent</span>
+<span class="hps">créera</span> <span class="hps">un nouvel élément dans</span>
+<span class="hps atn">le menu «Assets</span><span class="">»</span>
+<span class="hps">de votre éditeur</span> <span class="hps">appelé</span>
+<span class="hps">"Build</span> <span class="hps">AssetBundle</span><span>"</span><span class="">.</span></span></p>
+
+<p><span id="result_box3" class="short_text" lang="fr"><span class="hps">Pour 
+utiliser cet exemple</span><span>:</span></span></p>
+
+<ul>
+<li><span id="result_box4" class="" lang="fr"><span class="hps">Créer</span>
+<span class="hps">un script</span> <span class="hps">C #</span>
+<span class="hps">nommé</span> <span class="hps">ExportAssetBundles.cs</span><span>, 
+à l'intérieur</span> <span class="hps">d'un dossier nommé Editor</span><span>,</span>
+<span class="hps">dans la</span> <span class="hps">vue du projet.</span></span></li>
+<li><span id="result_box5" class="" lang="fr"><span class="hps">Sélectionnez</span>
+<span class="hps">le ou les Assets</span> <span class="hps">dans votre</span>
+<span class="hps">dossier de projet</span> <span class="hps">que vous</span>
+<span class="hps">souhaitez mettre </span>&nbsp;<span class="hps">dans l'</span>
+<span class="hps">AssetBundle</span><span class="">.</span></span></li>
+<li><span id="result_box6" class="" lang="fr"><span class="hps">Sélectionnez</span>
+<span class="hps">Construire</span> <span class="hps">AssetBundle</span>
+<span class="hps">dans le menu</span> <span>Assets.</span> <span class="hps">
+Cliquez sur "Save</span><span>" pour créer l'</span><span class="hps">AssetBundle</span><span>.</span></span></li>
+<li><span id="result_box7" class="" lang="fr"><span class="hps">La première 
+ligne</span> <span class="hps">de la fonction </span>&nbsp;<span class="hps">ExportResource</span>
+<span class="hps">définit le chemin</span> <span class="hps">de votre</span>
+<span class="hps">AssetBundle</span><span class="">.</span></span></li>
+<li><span id="result_box8" class="" lang="fr"><span class="hps">La ligne 
+suivante</span> <span class="hps">définit que les objets sélectionnés dans la 
+fenêtre Projet pourront être transformé en</span> <span class="hps">un</span>
+<span class="hps">AssetBundle</span><span class="">.</span></span></li>
+</ul>
+
+<p><span id="result_box9" class="" lang="fr"><span class="hps">La fonction</span>
+<span class="hps">BuildAssetBundle</span> <span class="hps">est</span>
+<span class="hps">la ligne</span> <span class="hps">qui crée le</span>
+<span class="hps">AssetBundle</span> <span class="hps">et l'enregistre</span>
+<span class="hps">à l'emplacement spécifié</span><span>.</span>
+<span class="hps">Le premier paramètre</span> <span class="hps">spécifie le</span>
+<span class="hps">mainAsset</span><span>,</span> <span class="hps">qui est un 
+asset</span> <span class="hps">spécial qui peut être</span> <span class="hps">
+obtenu</span> <span class="hps">directement avec la propriété</span>
+<span class="hps">mainAsset</span> <span class="hps">lors du chargement d'un 
+asset</span> de <span class="hps">l'AssetBundle</span><span>.</span>
+<span class="hps">Il</span> <span class="hps">n' est pas obligatoire</span>
+<span class="hps">de mettre</span> <span class="hps">un Asset</span>
+<span class="hps">principal</span><span>,</span> <span class="hps">si cela</span>
+<span class="hps">ne va pas</span> <span class="hps">être utilisé</span><span class="">, 
+vous pouvez utiliser</span> <span class="hps">null pour le paramètre</span><span>.</span>
+<span class="hps">Le deuxième paramètre est</span> <span class="hps">le tableau 
+d'objets</span> <span class="hps">qui feront</span> <span class="hps">le</span>
+<span class="hps">AssetBundle</span><span>.</span> <span class="hps">Le 
+troisième paramètre est</span> <span class="hps atn">l'</span><span class="">emplacement 
+sur le disque</span> <span class="hps">ou l'AssetBundle</span> <span class="hps">
+sera sauvegardé</span><span>.</span> <span class="hps">Le dernier paramètre</span>
+<span class="hps">sont les</span> <span class="hps">drapeaux</span>
+<span class="hps">de construction</span> <span class="hps">ou des options</span>
+<span class="hps">utilisées</span> <span class="hps">lors de la construction</span>
+<span class="hps">de l'AssetBundles</span><span>.</span> <span class="hps">OU 
+binaire</span> <span class="hps atn">(</span><span class="hps">'|'</span><span>)</span>
+<span class="hps">combine les</span> <span class="hps">options pour</span>
+<span class="hps">construire les</span> <span class="hps">AssetBundles</span><span>.</span>
+<span class="hps">Dans cet exemple</span> <span class="hps">
+BuildAssetBundleOptions.CollectDependencies</span> <span class="hps">inclu 
+d'autres</span> <span class="hps">actifs</span> <span class="hps">référencés par 
+les</span> <span class="hps">objets et</span> <span class="hps">
+BuildAssetBundleOptions.CompleteAssets</span> <span class="hps">assurez-vous que</span>
+<span class="hps">les actifs</span> <span class="hps">sont complètement</span>
+<span class="hps">inclut <span id="result_box10" class="" lang="fr">La ligne 
+suivante définit&nbsp; les objets sélectionnés dans la fenêtre Projet pour être 
+transformé en un AssetBundle<span class="">.</span></span></span></span></p>
+
+	<div id="gt-res-content" class="almost_half_cell">
+		<div dir="ltr" style="zoom:1">
+			<span lang="fr">La construction d'un </span>
+			<span id="result_box11" class="" lang="fr"><span class="hps">
+			AssetBundles</span> <span class="hps">devraient être</span>
+			<span class="hps">une étape de pré</span><span class="atn">-</span><span>publication</span>
+			<span class="hps">qui arrive</span> <span class="hps">une seule fois 
+			et</span> <span class="hps">en un seul appel</span>
+			<span class="hps">de</span> <span class="hps">fonction, par exemple</span><span>,</span>
+			<span class="hps">avec</span> <span class="hps">un élément de menu</span>
+			<span class="hps">qui construit</span> <span class="hps">tous les</span>
+			<span class="hps">AssetBundles</span><span>.</span>
+			<span class="hps">Comme</span> <span class="hps">vous développez 
+			votre application</span><span>, vous devriez</span>
+			<span class="hps">écrire des scripts</span> <span class="hps">
+			auxiliaires</span> <span class="hps">qui peuvent construire</span>
+			<span class="hps">tous vos</span> <span class="hps">AssetBundles</span>
+			<span class="hps">pour une</span> <span class="hps">plate-forme 
+			cible</span> <span class="hps">d'un simple clic</span>
+			<span class="hps">ou</span> <span class="hps">batchmode</span>
+			<span class="hps">sans</span> <span class="hps">intervention de 
+			l'utilisateur</span><span>.</span></span></div>
+	</div>
+
+<p>&nbsp;</p>
+
+<p><span id="result_box12" class="" lang="fr"><span class="hps">Il ya aussi</span>
+<span class="hps">une autre fonction</span> <span class="hps">pour créer</span>
+<span class="hps">AssetBundles</span><span>.</span> <span class="hps">Vous</span>
+<span class="hps">pouvez en lire plus</span> <span class="hps">à ce sujet</span>
+</span><a href="BuildingAssetBundles.html"><span lang="fr">ici</span></a>.</p>
+
+<h2><span id="result_box13" class="short_text" lang="fr"><span class="hps">
+Comment</span> <span class="hps">puis-je utiliser</span> <span class="hps">un</span>
+<span class="hps">AssetBundle</span><span class="">?</span></span></h2>
+
+<p><span id="result_box14" class="" lang="fr"><span class="hps">Il ya deux</span>
+<span class="hps">principales étapes</span> <span class="hps">lorsque vous 
+travaillez avec</span> <span class="hps">AssetBundles</span><span>.</span>
+<span class="hps">La première</span> <span class="hps">étape consiste à 
+télécharger</span> l'<span class="hps">AssetBundle</span> <span class="hps">
+depuis un serveur</span> <span class="hps">ou un disque</span><span>.</span>
+<span class="hps">Cela se fait avec</span> <span class="hps">la class WWW</span><span>.</span>
+<span class="hps">La</span> <span class="hps">deuxième étape consiste à</span>
+<span class="hps">charger les</span> <span class="hps">assets</span>
+<span class="hps">de l'AssetBundle</span><span>,</span> <span class="hps">pour 
+être utilisé dans</span> <span class="hps">l'application</span><span>.</span>
+<span class="hps">Voici un exemple de script</span> <span class="hps">C</span>
+<span class="hps">#:</span></span></p>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class BundleLoader : MonoBehaviour{
+    public string url;
+    public int version;
+    public IEnumerator LoadBundle(){
+        using(WWW www = WWW.LoadFromCacheOrDownload(url, version){
+            yield return www;
+            AssetBundle assetBundle = www.assetBundle;
+            GameObject gameObject = assetBundle.mainAsset as GameObject;
+            Instantiate(gameObject );
+            assetBundle.Unload(false);
+        }
+    }
+    void Start(){
+        StartCoroutine(LoadBundle());
+    }
+}
+
+</code></pre>
+
+<p><span id="result_box15" class="" lang="fr"><span class="hps">Ce script</span>
+<span class="hps">est ajouté à un</span> <span class="hps">gameobject</span>
+<span class="hps">comme composant</span><span>.</span> <span class="hps">Le</span>
+<span class="hps">AssetBundle</span> <span class="hps">est chargé</span>
+<span class="hps">de la manière suivante</span><span class="">:</span></span></p>
+
+<ul>
+<li><span id="result_box16" class="" lang="fr" tabindex="-1"><span class="hps">
+Les valeurs</span> <span class="hps">de l'URL</span> <span class="hps">et de la 
+variable version</span> <span class="hps">doivent être mis</span>
+<span class="hps">dans l'inspecteur</span> <span class="hps">avant l'exécution 
+de</span> <span class="hps">ce script</span><span>.</span> <span class="hps">
+L'URL</span> <span class="hps">est l'emplacement</span> <span class="hps">du 
+fichier de</span> <span class="hps">AssetBundle</span><span>, généralement un</span>
+<span class="hps">serveur sur Internet</span><span>.</span> <span class="hps">Le 
+numéro de version</span> <span class="hps">permet au développeur</span>
+<span class="hps">d'associer</span> <span class="hps">un numéro à l'AssetBundle</span>
+<span class="hps">lorsqu'il est écrit</span> <span class="hps">dans le cache</span>
+<span class="hps">dans le disque</span><span>.</span> <span class="hps">Lorsque 
+vous téléchargez un</span> <span class="hps">AssetBundle</span>
+<span class="hps">Unity va vérifier si</span> <span class="hps">le fichier 
+existe déjà</span> <span class="hps">dans le cache</span><span>.</span> Si c'est 
+le cas <span class="hps">il</span> <span class="hps">compare</span>
+<span class="hps">la version</span> <span class="hps">stockée</span>
+<span class="hps">de asset</span> <span class="hps">à la version</span>
+<span class="hps">requise.</span> <span class="hps">Si elle est différente</span>
+<span class="hps">alors l'AssetBundle</span> <span class="hps">sera</span>
+<span class="hps">retélécharger</span><span>.</span> <span class="hps">Si</span>
+<span class="hps">ce est la même</span><span>,</span> <span class="hps">alors il</span>
+<span class="hps">va charger l'AssetBundle</span> <span class="hps">a partir du 
+disque et</span> <span class="hps">éviter d'avoir à</span> <span class="hps">
+retélécharger</span> <span class="hps">le fichier</span><span>.</span>
+<span class="hps">Se référer à</span> <span class="hps">la fonction de</span>
+<span class="hps">WWW.LoadFromCacheOrDownload</span> <span class="hps">dans la 
+référence</span> <span class="hps">de script</span> <span class="hps">pour plus 
+d'informations</span> <span class="hps">sur ces paramètres.</span></span></li>
+<li>
+<div id="gt-res-content0" class="almost_half_cell">
+	<div dir="ltr" style="zoom:1">
+		<span id="result_box17" class="" lang="fr" tabindex="-1">
+		<span class="hps">Lorsque la fonction Start</span> <span class="hps">de 
+		ce</span> <span class="hps">script est appelé</span><span>,</span>
+		<span class="hps">il va commencer</span> <span class="hps">le chargement 
+		de</span> <span class="hps">l'AssetBundle</span> <span class="hps">en 
+		appelant la fonction</span> <span class="hps">de</span>
+		<span class="hps">Coroutine.The function will yield on the WWW object as 
+		it downloads the AssetBundle. By using this, the function will simply 
+		stop in that point until the WWW object is done downloading, but it will 
+		not block the execution of the rest of the code, it yields until it is 
+		done. Only up to one AssetBundle download can finish per frame when they 
+		are downloaded with WWW.LoadFromCacheOrDownload</span></span></div>
+</div>
+	</li>
+<li><span id="result_box18" class="" lang="fr" tabindex="-1"><span class="hps">
+Une fois l'objet</span> <span class="hps">de</span> <span class="hps">WWW</span>
+<span class="hps">a téléchargé le</span> <span class="hps">fichier</span>
+<span class="hps">AssetBundle</span><span>,</span> <span class="hps">la 
+propriété</span> <span class="hps">.assetBundle</span> <span class="hps">est 
+utilisé pour récupérer</span> <span class="hps">un objet</span>
+<span class="hps">AssetBundle</span><span>.</span> <span class="hps">Cet objet 
+est</span> <span class="hps">l'interface pour</span> <span class="hps">charger 
+des objets</span> <span class="hps">à partir du fichier</span> <span class="hps">
+de</span> <span class="hps">AssetBundle</span><span class="">.</span></span></li>
+<li><span id="result_box19" class="" lang="fr" tabindex="-1"><span class="hps">
+Dans cet exemple,</span> <span class="hps">une référence à un</span>
+<span class="hps">préfabriquée</span> <span class="hps">dans</span>
+<span class="hps">l'AssetBundle</span> <span class="hps">est extrait de 
+l'AssetBundle</span> <span class="hps">utilisant la propriété</span>
+<span class="hps">.mainAsset</span><span>.</span> <span class="hps">Cette 
+propriété est définie</span> <span class="hps">lors de la construction</span>
+<span class="hps">de</span> <span class="hps">l'AssetBundle</span>
+<span class="hps">passant</span> <span class="hps">un objet</span>
+<span class="hps">comme premier paramètre</span><span>.</span> <span class="hps">
+Le principal atout</span> <span class="hps">dans l'AssetBundle</span>
+<span class="hps">peut être</span> <span class="hps">utilisée pour stocker une</span>
+<span class="hps">TextAsset</span> <span class="hps">avec</span>
+<span class="hps">une liste d'objets</span> <span class="hps">à l'intérieur de</span>
+<span class="hps">l'AssetBundle</span> <span class="hps">et toute autre 
+information</span> <span class="hps">à leur sujet</span><span class="">.</span></span></li>
+</ul>
+
+<p><span id="result_box20" class="" lang="fr" tabindex="-1"><span class="hps">
+S'il vous plaît</span> <span class="hps">noter que</span> <span class="hps">pour 
+simplifier</span> <span class="hps">l'exemple précédent</span> <span class="hps">
+ne fait pas</span> <span class="hps">tous les contrôles</span> <span class="hps">
+de sécurité</span><span>.</span> <span class="hps">Regarder le code</span></span>
+<a href="DownloadingAssetBundles.html"><span lang="fr">ici</span></a>
+<span id="result_box21" class="" lang="fr" tabindex="-1"><span class="hps">pour</span>
+<span class="hps">un exemple plus complet</span><span class="">.</span></span></p>
+
+<h2><span id="result_box22" class="" lang="fr" tabindex="-1"><span class="hps">
+Comment</span> <span class="hps">puis-je utiliser</span> <span class="hps">les 
+AssetBundles</span> <span class="hps">dans l'éditeur</span><span>?</span></span></h2>
+
+<p><span id="result_box23" class="" lang="fr" tabindex="-1"><span class="hps">
+Comme</span> <span class="hps">la création d'applications</span>
+<span class="hps">est un processus itératif</span><span>, vous</span>
+<span class="hps">aurez très probablement à</span> <span class="hps">modifier 
+vos</span> <span class="hps">assets</span> <span class="hps">de nombreuses fois</span><span>, 
+ce qui nécessiterait</span> <span class="hps">la reconstruction des</span>
+<span class="hps">AssetBundles</span> <span class="hps">après chaque changement</span>
+<span class="hps">pour pouvoir</span> <span class="hps">les tester</span><span>.</span>
+<span class="hps">Même si il est</span> <span class="hps">possible de charger 
+les</span> <span class="hps">AssetBundles</span> <span class="hps">dans 
+l'éditeur</span><span>,</span> <span class="hps">ce n'est pas</span>
+<span class="hps">une methode de travail</span> <span class="hps">recommandée</span><span>.</span>
+<span class="hps">Au lieu de cela</span><span>,</span> <span class="hps">tout en 
+testant</span> <span class="hps">dans l'éditeur</span><span>, vous devez 
+utiliser</span> <span class="hps">la fonction</span> <span class="hps">d'aide</span>
+<span class="hps">Resources.LoadAssetAtPath</span> <span class="hps">pour éviter 
+d'avoir</span> <span class="hps">à utiliser et</span> <span class="hps">
+reconstruire les</span> <span class="hps">AssetBundles</span><span>.</span>
+<span class="hps">La fonction</span> <span class="hps">vous permet de charger</span>
+<span class="hps">l'Asset</span> <span class="hps">comme si il était</span>
+<span class="hps">en cours de chargement</span> <span class="hps">à partir d'un</span>
+<span class="hps">AssetBundle</span><span>,</span> <span class="hps">mais</span>
+<span class="hps">ignore le processus</span> <span class="hps">de</span>
+<span class="hps">construction et</span> <span class="hps">vos Assets sont</span>
+<span class="hps">toujours à jour</span><span>.</span></span></p>
+
+<p><span id="result_box24" class="" lang="fr" tabindex="-1"><span class="hps">
+Voici un</span> <span class="hps">script d'exemple</span><span>,</span>
+<span class="hps">que vous pouvez utiliser</span> <span class="hps">pour charger 
+vos</span> <span class="hps">Assets</span> <span class="hps">en fonction de</span>
+<span class="hps">si vous exécutez</span> <span class="hps">dans l'éditeur</span>
+<span class="hps">ou non</span><span>.</span> <span class="hps">Mettez</span>
+<span class="hps">ce code dans un script C# nommé</span> <span class="hps">
+AssetBundleLoader.cs</span><span class="">:</span></span></p>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class AssetBundleLoader {
+    public Object Obj; // The object retrieved from the AssetBundle
+   
+    public IEnumerator LoadBundle&lt;T&gt; (string url, int version, string assetName, string assetPath) where T : Object {
+        Obj = null;
+
+#if UNITY_EDITOR
+        Obj = Resources.LoadAssetAtPath(assetPath, typeof(T));
+        if (Obj == null)
+            Debug.LogError (&quot;Asset not found at path: &quot; + assetPath);
+        yield break;
+
+#else
+
+        WWW download;
+        if ( Caching.enabled ) { 
+            while (!Caching.ready)
+                yield return null;
+           download = WWW.LoadFromCacheOrDownload( url, version );
+        }
+        else {
+            download = new WWW (url);
+        }
+
+        yield return download;
+        if ( download.error != null ) {
+            Debug.LogError( download.error );
+            download.Dispose();
+            yield break;
+        }
+
+        AssetBundle assetBundle = download.assetBundle;
+        download.Dispose();
+        download = null;
+
+        if (assetName == &quot;&quot; || assetName == null)
+        Obj = assetBundle.mainAsset;
+        else
+            Obj = assetBundle.Load(assetName, typeof(T));
+       
+        assetBundle.Unload(false);
+
+#endif
+    }
+}
+
+</code></pre>
+
+<p><span id="result_box25" class="" lang="fr" tabindex="-1"><span class="hps">
+Nous pouvons maintenant utiliser</span> <span class="hps">le script</span>
+<span class="hps">AssetBundleLoader</span> <span class="hps">pour charger un</span>
+<span class="hps">Asset</span> <span class="hps">d'un</span> <span class="hps">
+AssetBundle</span> <span class="hps">si nous</span> <span class="hps">lançons</span>
+<span class="hps">l'application construite</span> <span class="hps">ou charger</span>
+<span class="hps">asset</span> <span class="hps">directement</span>
+<span class="hps">à partir du dossier</span> <span class="hps">de projet</span>
+<span class="hps">en cas d'exécution</span> <span class="hps">dans l'éditeur</span><span class="">:</span></span></p>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class ExampleLoadingBundle : MonoBehaviour {
+    public string url = &quot;http://www.mygame.com/myBundle.unity3d&quot;; // URL where the AssetBundle is
+    public int version = 1; // The version of the AssetBundle
+
+    public string assetName = &quot;MyPrefab&quot;; // Name of the Asset to be loaded from the AssetBundle
+    public string assetPath; // Path to the Asset in the Project folder
+
+    private Object ObjInstance; // Instance of the object
+    void Start(){
+        StartCoroutine(Download());
+    }
+
+    IEnumerator Download () {
+        AssetBundleLoader assetBundleLoader = new AssetBundleLoader ();
+        yield return StartCoroutine(assetBundleLoader.LoadBundle &lt;GameObject&gt; (url, version, assetName, assetPath));
+        if (assetBundleLoader.Obj != null)
+            ObjInstance = Instantiate (assetBundleLoader.Obj);
+    }
+
+    void OnGUI(){
+        GUILayout.Label (ObjInstance ? ObjInstance.name + &quot; instantiated&quot; : &quot;&quot;);
+    }
+}
+
+</code></pre>
+
+<p><span id="result_box26" class="" lang="fr" tabindex="-1"><span class="hps">Le 
+script</span> <span class="hps">doit être enregistré</span> <span class="hps">
+dans un fichier nommé</span> <span class="hps">ExampleLoadingBundle.cs</span>
+<span class="hps">dans le dossier</span> Assets<span>.</span> <span class="hps">
+Après avoir défini les</span> <span class="hps">variables publiques</span>
+<span class="hps">à leurs</span> <span class="hps">valeurs correctes</span>
+<span class="hps">et en l'exécutant</span><span>, il utilisera</span>
+<span class="hps">la class</span> <span class="hps">AssetBundleLoader</span>
+<span class="hps">pour charger un</span> <span class="hps">Asset</span><span>.</span>
+<span class="hps">Il est ensuite</span> <span class="hps">instancié et</span>
+<span class="hps">sera instantié</span> <span class="hps">en utilisant</span>
+<span class="hps">l'interface graphique</span><span class="">.</span></span></p>
+
+<h2><span id="result_box27" class="short_text" lang="fr" tabindex="-1">
+<span class="hps">Comment puis-je</span> <span class="hps">mettre en cache les</span>
+<span class="hps">AssetBundles</span><span class="">?</span></span></h2>
+
+<p><span id="result_box29" class="" lang="fr" tabindex="-1"><span class="hps">
+Vous pouvez utiliser </span></span>&nbsp;<a href="../ScriptReference/WWW.LoadFromCacheOrDownload.html">WWW.LoadFromCacheOrDownload</a> 
+<span id="result_box28" class="" lang="fr" tabindex="-1">&nbsp;<span class="hps">qui</span>
+<span class="hps">prend automatiquement</span> <span class="hps">soin de 
+sauvegarder</span> <span class="hps">vos</span> <span class="hps">AssetBundles</span>
+<span class="hps">sur le disque</span><span>.</span> <span class="hps">Soyez 
+conscient que</span> <span class="hps">sur le</span> <span class="hps">Webplayer</span>
+<span class="hps">vous êtes limité à</span> <span class="hps">50 Mo</span>
+<span class="hps">au total</span> <span class="hps">(partagé</span>
+<span class="hps">entre tous</span> <span class="hps">webplayers</span><span>).</span>
+<span class="hps">Vous pouvez acheter</span> <span class="hps">une licence de</span>
+<span class="hps">mise en cache</span> <span class="hps">distincte pour</span>
+<span class="hps">votre jeu</span> <span class="hps">si vous avez besoin</span>
+<span class="hps">de plus d'espace</span><span>.</span></span></p>
+
+<p><span id="result_box31" class="" lang="fr" tabindex="-1"><span class="hps">Si</span>
+<span class="hps">vos</span> <span class="hps">AssetBundles</span>
+<span class="hps">sont</span> <span class="hps">stockés dans le dossier</span></span> <a href="StreamingAssets.html">StreamingAssets</a> 
+en tant qu<span lang="fr">'</span><span id="result_box32" class="" lang="fr" tabindex="-1"><span class="hps">AssetBundles 
+incompressé</span><span>, vous pouvez utiliser</span></span> <a href="../ScriptReference/AssetBundle.CreateFromFile.html">AssetBundle.CreateFromFile</a> 
+<span id="result_box33" class="" lang="fr" tabindex="-1"><span class="hps">pour 
+référencer l'AssetBundle</span> <span class="hps">sur le disque</span></span>
+<span id="result_box30" class="" lang="fr" tabindex="-1"><span class="hps">Si</span>
+<span class="hps">les</span> <span class="hps">AssetBundles</span>
+<span class="hps">dans le dossier</span> <span class="hps">StreamingAssets</span>
+<span class="hps">sont compressés</span><span>, vous</span> <span class="hps">
+aurez besoin d'utiliser</span> <span class="hps">WWW.LoadFromCacheOrDownload</span>
+<span class="hps">pour créer une copie</span> <span class="hps">non compressée 
+du</span> <span class="hps">AssetBundle</span> <span class="hps">dans le cache</span><span class="">.</span></span></p>
+
+<h2><span id="result_box34" class="short_text" lang="fr" tabindex="-1">
+<span class="hps">AssetBundles</span> <span class="hps">sont</span>
+<span class="hps">multi-plateforme</span><span class="">?</span></span></h2>
+
+<p><span id="result_box35" class="" lang="fr" tabindex="-1"><span class="hps">
+Les AssetBundles</span> <span class="hps">sont compatibles</span>
+<span class="hps">entre</span> <span class="hps">certaines plates-formes</span><span>.</span>
+<span class="hps">Utilisez le tableau suivant</span> <span class="hps">comme 
+guide.</span></span></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="5"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="5"><strong>
+	<span id="result_box36" class="" lang="fr" tabindex="-1"><span class="hps">
+	La compatibilité</span> <span class="hps">des plate-forme</span>
+	<span class="hps">pour</span> <span class="hps">AssetBundles</span></span></strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Standalone</td>
+	<td style="text-align:left;">Webplayer</td>
+	<td style="text-align:left;">iOS</td>
+	<td style="text-align:left;">Android</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Editor</td>
+	<td style="text-align:left;">Y</td>
+	<td style="text-align:left;">Y</td>
+	<td style="text-align:left;">Y</td>
+	<td style="text-align:left;">Y</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Standalone</td>
+	<td style="text-align:left;">Y</td>
+	<td style="text-align:left;" colspan="3">Y</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Webplayer</td>
+	<td style="text-align:left;">Y</td>
+	<td style="text-align:left;" colspan="4">Y</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="3">iOS</td>
+	<td style="text-align:left;" colspan="3">Y</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="4">Android</td>
+	<td style="text-align:left;" colspan="2">Y</td>
+</tr>
+</tbody>
+</table>
+
+<p>For example, a bundle created while the Webplayer build target was active would be compatible with the editor and with standalone builds. However, it would not be compatible with apps built for the iOS or Android platforms.</p>
+
+<h2>How are assets in AssetBundles identified?</h2>
+
+<p>When you build AssetBundles the assets are identified internally by their filename without the extension. For example a Texture located in your Project folder at “Assets/Textures/myTexture.jpg” is identified and loaded using “myTexture” if you use the default method. You can have more control over this by supplying your own array of ids (strings) for each object when Building your AssetBundle with <a href="../ScriptReference/BuildPipeline.BuildAssetBundleExplicitAssetNames.html">BuildPipeline.BuildAssetBundleExplicitAssetNames</a>.</p>
+
+<h2>Can I reuse my AssetBundles in another game?</h2>
+
+<p>AssetBundles allow you to share content between different games. The requirement is that any Assets which are referenced by GameObjects in your AssetBundle must be included in the AssetBundle. To make sure the referenced Assets are included in the AssetBundle when they are built you can pass the <a href="../ScriptReference/BuildAssetBundleOptions.CollectDependencies.html">BuildAssetBundleOptions.CollectDependencies</a> option.</p>
+
+<h2>Will an AssetBundle built now be usable with future versions of Unity?</h2>
+
+<p>AssetBundles can contain a structure called a <span class="doc-keyword">type tree</span> which allows information about asset types to be understood correctly between different versions of Unity. On desktop platforms, the type tree is included by default but can be disabled by passing the <a href="../ScriptReference/BuildAssetBundleOptions.DisableWriteTypeTree.html">BuildAssetBundleOptions.DisableWriteTypeTree</a> to the BuildAssetBundle function. Webplayers intrinsically rely on the type tree and so it is always included (ie, the DisableWriteTypeTree option has no effect). Type trees are never included for mobile and console asset bundles and so you will need to rebuild these bundles whenever the serialization format changes. This can happen in new versions of Unity. (Except for bugfix releases) It also happens if you add or remove serialized fields in monobehaviour’s that are included in the asset bundle. When loading an AssetBundle Unity will give you an error message if the AssetBundle must be rebuilt.</p>
+
+<h2>How can I list the objects in an AssetBundle?</h2>
+
+<p>You can use <a href="../ScriptReference/AssetBundle.LoadAll.html">AssetBundle.LoadAll</a> to retrieve an array containing all objects from the AssetBundle. It is not possible to get a list of the identifiers directly. A common workaround is to keep a separate TextAsset to hold the names of the assets in the AssetBundle.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetBundlesIntro.html"></a></span><div class="tip">AssetBundles (Pro only)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BuildingAssetBundles.html"></a></span><div class="tip">Building AssetBundles</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
